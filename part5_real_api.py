@@ -336,7 +336,7 @@ if __name__ == "__main__":
 #             with open("results.json", "w") as f:
 #                 json.dump(data, f, indent=2)
 # 
-#Exercise 5: Add API key support for OpenWeatherMap                                          #will do soon
+#Exercise 5: Add API key support for OpenWeatherMap                                      
 #             Sign up at: https://openweathermap.org/api
 #             Use environment variables:
 #             import os
