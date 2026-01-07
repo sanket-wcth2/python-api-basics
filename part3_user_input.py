@@ -80,6 +80,7 @@ def get_crypto_price():                                                         
         print(f"\nCoin '{coin_id}' not found!")
         print("Try: btc-bitcoin, eth-ethereum, doge-dogecoin")
 
+#exercise dc
 
 def get_post_comments():                                                          #func to get comments on posts
     """Print comments for a given post."""
@@ -103,6 +104,7 @@ def get_post_comments():                                                        
     else:
         print("No comments found for this post.")
 
+#exercise2
 
 def get_user_todos():                                                             #func for user todos
     """Print TODOs for a user."""
@@ -127,62 +129,6 @@ def get_user_todos():                                                           
     else:
         print("No TODOs found for this user.")
 
-#exercise 1
-
-CITIES = {
-    "delhi": (28.6139, 77.2090),
-    "mumbai": (19.0760, 72.8777),
-    "bangalore": (12.9716, 77.5946),
-    "chennai": (13.0827, 80.2707),
-    "kolkata": (22.5726, 88.3639),
-    "hyderabad": (17.3850, 78.4867),
-    "pune": (18.5204, 73.8567),
-    "ahmedabad": (23.0225, 72.5714),
-    "jaipur": (26.9124, 75.7873),
-    "nashik": (19.9974, 73.7898),     
-    "new york": (40.7128, -74.0060),
-    "london": (51.5074, -0.1278),
-    "tokyo": (35.6762, 139.6503),
-    "sydney": (-33.8688, 151.2093),
-    "seoul": (37.5665, 126.9780),
-    "singapore": (1.3521, 103.8198),
-    "dubai": (25.2048, 55.2708),
-}
-
-def get_weather():  
-    """Fetch weather for a city using Open-Meteo API."""
-    print("\n=== Weather Lookup ===")
-    print("Available cities:", ", ".join(CITIES.keys()))
-
-    city = input("Enter city name: ").lower().strip()
-
-    if city not in CITIES:
-        print("City not found!")
-        return
-
-    latitude, longitude = CITIES[city]
-
-    url = "https://api.open-meteo.com/v1/forecast"
-    params = {
-        "latitude": latitude,
-        "longitude": longitude,
-        "current_weather": True
-    }
-
-    response = requests.get(url)
-
-    if response.status_code == 200:
-        data = response.json()
-        current = data["current_weather"]
-
-        print(f"\nWeather in {city.title()}:")
-        print(f"Temperature: {current['temperature']}°C")
-        print(f"Wind Speed: {current['windspeed']} km/h")
-        print(f"Wind Direction: {current['winddirection']}°")
-    else:
-        print("Failed to fetch weather data.")
-
-
 
 def main():                                                                          #main 
     """Main menu for the program."""
@@ -197,10 +143,9 @@ def main():                                                                     
         print("3. Check crypto price")
         print("4. View comments for a post")
         print("5. View user TODOs")
-        print("6. Get weather by city name")
-        print("7. Exit")
+        print("6. Exit")
 
-        choice = input("\nEnter choice (1-7): ")                                    #choices
+        choice = input("\nEnter choice (1-6): ")                                    #choices
 
         if choice == "1":
             get_user_info()
@@ -213,8 +158,6 @@ def main():                                                                     
         elif choice == "5":
             get_user_todos()
         elif choice == "6":
-            get_weather()   
-        elif choice == "7":
             print("\nGoodbye!")
             break                                                                   #after entering choice 6 loop breaks
         else:
