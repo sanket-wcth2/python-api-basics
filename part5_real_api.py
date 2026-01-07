@@ -282,7 +282,7 @@ def dashboard():                                                               #
         print("  6. Create a Post (POST request)")
         print("  7. Exit")
 
-        choice = input("\nSelect (1-5): ").strip()                             #choices
+        choice = input("\nSelect (1-7): ").strip()                             #choices
 
         if choice == "1":
             print(f"\nAvailable: {', '.join(CITIES.keys())}")
